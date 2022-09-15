@@ -1,0 +1,48 @@
+{{>layouts/header}}
+<link rel="stylesheet" href="/css/login.css">
+
+<body >
+<section class="login-form">
+    <h1>Login</h1>
+    <form action="/login" method=>
+        <div class="int-area">
+            <input type="text" name="id" id="id"
+                   autocomplete="off" required>
+            <label for="id">User name</label>
+        </div>
+        <div class="int-area">
+            <input type="password" name="pw" id="pw"
+                   autocomplete="off" required>
+            <label for="pw">password</label>
+        </div>
+        <div class="btn-area">
+            <button type="submit">login</button>
+        </div>
+        <div class="btn-area">
+            <button type="submit">Sign up</button>
+        </div>
+    </form>
+    <div class="caption">
+        <a href="">Forgot password?</a>
+    </div>
+</section>
+
+<script>
+    let id = $('#id');
+    let pw = $('#pw');
+    let btn = $('#btn');
+
+    $(btn).on('click', function() {
+        if($(id).val() == "") {
+            $(id).next('label').addClass('warning');
+            setTimeout(function() {
+                $('label').removeClass('warning');
+            }, 1500);
+        }
+
+        else if($(pw).val() == "") {
+            $(pw).next('label').addClass('warning');
+        }
+    });
+</script>
+{{>layouts/footer}}

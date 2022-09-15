@@ -1,0 +1,52 @@
+{{>layouts/header}}
+<link rel="stylesheet" href="/css/register.css">
+
+<section class="Registration-form">
+    <h1>Sign-up</h1>
+    <form action="" method="">
+        <div class="int-area">
+            <input type="text" name="id" id="id"
+                   autocomplete="off" required>
+            <label for="id">email</label>
+        </div>
+        <div class="int-area">
+            <input type="password" name="pw" id="pw"
+                   autocomplete="off" required>
+            <label for="pw">password</label>
+        </div>
+        <div class="int-area">
+            <input type="password" name="pw" id="pw"
+                   autocomplete="off" required>
+            <label for="pw">Confirm password</label>
+        </div>
+        <div class="int-area">
+            <input type="text" name="name" id="name"
+                   autocomplete="off" required>
+            <label for="name">name</label>
+        </div>
+        <div class="btn-area">
+            <button type="submit">Register</button>
+        </div>
+    </form>
+</section>
+
+<script>
+    let id = $('#id');
+    let pw = $('#pw');
+    let btn = $('#btn');
+
+    $(btn).on('click', function() {
+        if($(id).val() == "") {
+            $(id).next('label').addClass('warning');
+            setTimeout(function() {
+                $('label').removeClass('warning');
+            }, 1500);
+        }
+
+        else if($(pw).val() == "") {
+            $(pw).next('label').addClass('warning');
+        }
+    });
+</script>
+
+{{>layouts/footer}}

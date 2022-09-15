@@ -1,4 +1,71 @@
-{{>layout/header}}
+{{>layouts/header}}
+<link rel="stylesheet" href="/css/main.css">
+
+<header>
+    <div class="menu">
+        <h1>MovieBox</h1>
+        <div class="loginmenu">
+            <button type="button" onClick="location.href='/login'" class="btn btn-outline-light me-2">Login</button>
+            <button type="button" onClick="location.href='/register'" class="btn btn-warning">Sign-up</button>
+        </div>
+    </div>
+</header>
+
+<!--스크립트-->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="/js/TMDB.js"></script>
+<script src="/js/youtube.js"></script>
+
+<section>
+    <div class=wrap>
+        <div id="video-swiper" class="swiper-container">
+            <div id="main" class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <iframe width="500" height="400" src="https://www.youtube.com/embed/a3ICNMQW7Ok?enablejsapi=1&rel=0" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>=
+        </div>
+    </div>
+</section>
+
+<div id="list">
+    <div class="search_bar">
+        <form id="form">
+            <input type="text" placeholder="검색" id="search" class="search">
+        </form>
+    </div>
+    <div id="page_list">
+        <div class="movie">
+            <img src="https://w.namu.la/s/2b96c1f6b73672e8bbed26865bda4680983f887ffb4ea3a571dfe49719c547a1a2c9d1807ab610e9b55ffdd0b6826f24121d6e4fc3784f2c477e02395034d0829c1d58e0a6280e5b05638fd77f79491b459dda9afd11d1e1e28e60ff30c3a48d34f4ad9a4ebcac9d1d36dc701f37202a" alt="Image">
+
+            <div class="movie-info">
+                <h3>Movie Title</h3>
+                <span class="green">9.8</span>
+            </div>
+        </div>
+    </div>
+</div>
 
 
-{{>layout/footer}}
+<!--<script>
+    function success({ coords, timestamp }) {
+        const latitude = coords.latitude;   // 위도
+        const longitude = coords.longitude; // 경도
+
+        alert(`위도: ${latitude}, 경도: ${longitude}, 위치 반환 시간: ${timestamp}`);
+    }
+
+    function getUserLocation() {
+        if (!navigator.geolocation) {
+            throw "위치 정보가 지원되지 않습니다.";
+        }
+        navigator.geolocation.watchPosition(success);
+    }
+
+    getUserLocation();
+</script>-->
+
+
+{{>layouts/footer}}
