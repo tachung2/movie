@@ -20,6 +20,7 @@ public class Controller {
         return "register";
     }
 
+
     @GetMapping("/search")
     public String search() {
         return "map";
