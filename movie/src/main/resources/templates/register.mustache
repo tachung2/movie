@@ -3,24 +3,24 @@
 
 <section class="Registration-form">
     <h1>Sign-up</h1>
-    <form action="" method="">
+    <form action="/user/signup" method="post">
         <div class="int-area">
-            <input type="text" name="id" id="id"
+            <input type="text" name="email" id="email" value=""
                    autocomplete="off" required>
-            <label for="id">email</label>
+            <label for="email">email</label>
         </div>
         <div class="int-area">
-            <input type="password" name="pw" id="pw"
+            <input type="password" name="password" id="password" value=""
                    autocomplete="off" required>
-            <label for="pw">password</label>
+            <label for="password">password</label>
         </div>
         <div class="int-area">
-            <input type="password" name="pw" id="pw"
+            <input type="password"
                    autocomplete="off" required>
-            <label for="pw">Confirm password</label>
+            <label for="password">Confirm password</label>
         </div>
         <div class="int-area">
-            <input type="text" name="name" id="name"
+            <input type="text" name="name" id="name" value=""
                    autocomplete="off" required>
             <label for="name">name</label>
         </div>
@@ -31,8 +31,8 @@
 </section>
 
 <script>
-    let id = $('#id');
-    let pw = $('#pw');
+    let id = $('#email');
+    let pw = $('#password');
     let btn = $('#btn');
 
     $(btn).on('click', function() {

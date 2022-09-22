@@ -2,11 +2,17 @@
 <link rel="stylesheet" href="/css/main.css">
 
 <header>
-    <div class="menu">
+    <div class="menu" id="menu">
         <h1>MovieBox</h1>
         <div class="loginmenu">
-            <button type="button" onClick="location.href='/login'" class="btn btn-outline-light me-2">Login</button>
-            <button type="button" onClick="location.href='/register'" class="btn btn-warning">Sign-up</button>
+            {{^loginEmail}}
+                <button type="button" onClick="location.href='/user/login'" class="btn btn-outline-light me-2">Login</button>
+                <button type="button" onClick="location.href='/user/register'" class="btn btn-warning">Sign-up</button>
+            {{/loginEmail}}
+            {{#loginEmail}}
+                <h2>{{name}}</h2>
+                <button type="button" onClick="location.href='/user/logout'" class="btn btn-warning">Logout</button>
+            {{/loginEmail}}
         </div>
     </div>
 </header>
@@ -19,7 +25,7 @@
 <script src="/js/youtube.js"></script>
 
 <section>
-    <div class=wrap>
+    <div id="wrap" class="wrap">
         <div id="video-swiper" class="swiper-container">
             <div id="main" class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -55,8 +61,24 @@
     </div>
 </div>
 
+<div class="pagination">
+    <div class="page disabled" id="prev">이전 페이지</div>
+    <div class="current" id="current">1</div>
+    <div class="page" id="next">다음 페이지</div>
+</div>
+
 <script src="/js/Getlist.js"></script>
 
+<script>
+    let wrap = document.getElementById('wrap');
+    let menu = document.getElementById('menu');
+
+    window.addEventListener('scroll', function(){
+        let value = window.scrollY;
+        menu.style.top = value * 1.00+ 'px';
+        wrap.style.top = value * 1.00+ 'px';
+    })
+</script>
 
 <!--<script>
     function success({ coords, timestamp }) {
